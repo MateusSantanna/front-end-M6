@@ -1,3 +1,5 @@
+import { MoneyResults } from "./style";
+
 function Money({tomorrow,
     fifteenDays,
     thirtyDays,
@@ -6,20 +8,30 @@ function Money({tomorrow,
     
         return (
             <>
-                <h3>Você receberá:</h3>
-                <p>Amanhã: 
-                    <p> R$ {tomorrow ? tomorrow : 0},00 </p>
-                </p>
-                <p>Em 15 dias: 
-                    <p>R$ {fifteenDays ? fifteenDays : 0},00</p>
-                </p>
-                <p>Em 30 dias: 
+            <MoneyResults>
+                <h3>VOCÊ RECEBERÁ:</h3>
+
+                <div>
+                <p>Amanhã:</p>
+                    <p>R$ {tomorrow ? tomorrow : 0},00 </p>
+                </div>
+
+                <div>
+                <p>Em 15 dias:</p>
+                    <p>R$ {fifteenDays ? fifteenDays : 0},00 </p>
+                </div>
+
+                <div>
+                <p>Em 30 dias:</p>
                     <p>R$ {thirtyDays ? thirtyDays : 0},00</p>
-                </p>
-                <p>Em 90 dias: 
+                </div>
+
+                <div>
+                <p>Em 90 dias:</p>
                     <p>R$ {ninetyDays ? ninetyDays : 0},00</p>
-                </p>
+                </div>
         
+            </MoneyResults>
             </>
         )
 };

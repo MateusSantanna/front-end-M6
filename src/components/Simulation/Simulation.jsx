@@ -2,6 +2,7 @@ import api from "../../services/api";
 import { dataSchema } from "../../Schema/schema"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Simulator } from "./style";
 
 function Simulation({ setTomorrow, 
     setFifteenDays,
@@ -34,29 +35,44 @@ function Simulation({ setTomorrow,
     
         return (
             <>
+            <Simulator>     
             <h2>Simule sua Antecipação</h2>
-            <form action="" onSubmit={handleSubmit(submitFunction)}>
+            <form onSubmit={handleSubmit(submitFunction)}>
+                <div>
                     <label>
                         Informe o valor da venda *
                     </label>
+                    <br></br>
                     <input type="number" max={10000} required
                     placeholder={errors.amount?.message} {...register("amount")}/>
+                    </div>
               
+                
+                <div>
                     <label>
                         Em quantas parcelas *
                     </label>
+                    <br></br>
                     <input type="number" max={12} required
                     placeholder={errors.installments?.message} {...register("installments")}/>
+                    <br></br>
                     <span>Máximo de 12 parcelas</span>
+                </div>
               
+
+                <div>
                     <label>
                         Informe o percentual de MDR *
                     </label>
+                    <br></br>
                     <input type="number" max={100} required
                     placeholder={errors.mdr?.message} {...register("mdr")}/>
                 
+                <br></br>
                 <input type="submit" />
+                    </div>
             </form>
+            </Simulator>
             </>
             
         )

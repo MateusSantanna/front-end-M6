@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Money from "../components/Money/Money";
 import Simulation from "../components/Simulation/Simulation";
+import { Container } from "./style";
 
 function Calculator(){
 
@@ -11,6 +12,8 @@ function Calculator(){
 
     return (
         <>
+            
+        <Container>
             <Simulation
             setTomorrow={setTomorrow}
             setFifteenDays={setFifteenDays}
@@ -22,6 +25,7 @@ function Calculator(){
             fifteenDays={fifteenDays}
             thirtyDays={thirtyDays}
             ninetyDays={ninetyDays} />
+        </Container>
         </>
     
     )
